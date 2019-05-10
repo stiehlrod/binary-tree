@@ -16,9 +16,22 @@ class BinarySearchTree
   end
 
   def include?(position)
-    # result = @collection.detect{|node| node.position == position}
-    # return false unless result != nil
     @collection.any? { |node| node.position == position } #=> true
   end
 
+  def depth_of(position)
+    @collection.find_index  { |node| node.position == position }  -1
+  end
+
+  def min
+    @collection.min do |node|
+      node.position
+    end
+  end
+
+  def max
+    @collection.max do |node|
+      node.position
+    end
+  end
 end

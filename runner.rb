@@ -14,7 +14,13 @@ tree.include?(16)
 # => true
 tree.include?(72)
 # => false
-binding.pry
+tree.depth_of(92)
+# => 1
+tree.depth_of(50)
+# => 2
+tree.max
+# => {"Sharknado 3"=>92}
 
-# left_node = Node.new(61, "Bill & Ted's Excellent Adventure")
-# right_node = Node.new(16, "Johnny English")
+tree.min
+# => {"Johnny English"=>16}
+binding.pry
