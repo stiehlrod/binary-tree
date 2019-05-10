@@ -1,14 +1,24 @@
+require 'pry'
+
 class BinarySearchTree
-  def initialize(left_node, right_node)
-    @left_node = left_node
-    @right_node = right_node
-    @collection = Hash.new(0)
+  attr_reader :collection
+
+  def initialize
+    # @position = nil
+    # @name = name
+    @collection = []
   end
 
-  def insert(id, name)
-    node = Node.new(id, name)
-    @collection[:id] = id
-    @collection[:name] = name
+  def insert(position, name)
+    node = Node.new(position, name)
+    @collection << node
     @collection
   end
+
+  def include?(position)
+    # result = @collection.detect{|node| node.position == position}
+    # return false unless result != nil
+    @collection.any? { |node| node.position == position } #=> true
+  end
+
 end

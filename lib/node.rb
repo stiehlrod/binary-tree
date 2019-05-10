@@ -1,11 +1,10 @@
 class Node
-  def initialize(id, name)
-    @id = id
+  attr_reader :position,
+                    :name
+  def initialize(position, name)
+    @position = position
     @name = name
   end
 
-  def position
-    0
-  end
 
 end
